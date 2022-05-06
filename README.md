@@ -8,20 +8,20 @@
 Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- < Provide a short description of your program's functionality. No more than a couple sentences. >
+This program allowed us to comprehend pygame more by using pygame library. The hero moves up down left right to sucessfully kill the enemy. If failed his lives decrease
+ 
 #### Unique Feature
- < Describe the unique feature you added >
+added background music to the game 
 
 ## GRACE DAYS
-Grace days used for this assignment: < # >
+Grace days used for this assignment: 5
 
-Grace days remaining: < # >/5
+Grace days remaining:0 /5
 
 ## KNOWN BUGS AND INCOMPLETE PARTS:
- < What parts of the project you were not able to complete >
+none
 
 ## REFERENCES:
- < List any outside resources used >
-
+yt
 ## MISCELLANEOUS COMMENTS:
- < Anything you would like the grader to know >
+beep

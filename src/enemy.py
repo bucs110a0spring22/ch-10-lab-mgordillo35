@@ -20,5 +20,27 @@ class Enemy(pygame.sprite.Sprite):
         self.name = name + str(id(self))
         self.speed = 2
 
+    '''
+    this function initializes the enemy
+    args: (self)- needs to be used to call atributtes (name) - unsure of what dies does 
+  (x)- assigned x coordinate for the rect of the enemy 
+  (y)- assigned y coordinate for the rect of the enemy 
+  (img_file) - imports an image from another file into the screen 
+    return None
+    '''
+
+
+
+  
     def update(self):
-        print("'Update me,' says " + self.name)
+      changeCord = random.randrange(-1, 2) #from -1 to 1
+      self.rect.x += changeCord
+      self.rect.y += changeCord
+      
+      #print("'Update me,' says " + self.name)
+
+    '''
+    this function allows the rect enemy to move around randomly in the screen 
+    args: (self)- needs to be used to call atributtes
+    return None
+    '''

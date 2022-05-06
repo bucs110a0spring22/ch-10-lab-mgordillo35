@@ -3,6 +3,8 @@ import pygame
 import random
 from src import hero
 from src import enemy
+from replit import audio # class that helps handle music 
+
 
 
 class Controller:
@@ -27,12 +29,49 @@ class Controller:
         self.all_sprites = pygame.sprite.Group((self.hero,) + tuple(self.enemies))
         self.state = "GAME"
 
+    '''
+    this function initializes pygame, sets up screen, sets bg color, and creates sprite group for enemt
+    args: (self)- needs to be used to call atributtes (width)- set for the width of the displsy  (height)- height of the display baclground
+    return None
+    '''
+
+
+
+  
+    def background_music(self):
+      self.source = audio.play_file('assets/bg.mp3')
+      while True:
+        self.source
+      
+
+
+    '''
+      self.source = audio.play_file('assets/bg.mp3')
+
+      while True:
+        if (self.state == "GAME"):
+          self.source
+
+    '''
+
+
+
+
+
+  
     def mainLoop(self):
         while True:
             if(self.state == "GAME"):
                 self.gameLoop()
             elif(self.state == "GAMEOVER"):
                 self.gameOver()
+
+    '''
+    this function sets the function required to make sure your playing the game whe its over 
+    args: (self)- needs to be used to call atributtes
+    return None
+    '''
+        
 
     def gameLoop(self):
         while self.state == "GAME":
@@ -70,6 +109,13 @@ class Controller:
             # update the screen
             pygame.display.flip()
 
+
+    '''
+    gameloop is the game itself these are where the programmer sets the keys and conditions such as gameover
+    args: (self)- needs to be used to call atributtes
+    return None
+    '''
+
     def gameOver(self):
         self.hero.kill()
         myfont = pygame.font.SysFont(None, 30)
@@ -80,3 +126,10 @@ class Controller:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
+
+
+    '''
+    this function is for events - to show text in screen when player is dead 
+    args: (self)- needs to be used to call atributtes
+    return None
+    '''
