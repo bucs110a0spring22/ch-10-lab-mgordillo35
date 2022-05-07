@@ -3,7 +3,8 @@ import pygame
 import random
 from src import hero
 from src import enemy
-from replit import audio # class that helps handle music 
+from replit import audio
+#from src import music
 
 
 
@@ -26,8 +27,12 @@ class Controller:
             y = random.randrange(100, 400)
             self.enemies.add(enemy.Enemy("Boogie", x, y, 'assets/enemy.png'))
         self.hero = hero.Hero("Conan", 50, 80, "assets/hero.png")
+        #self.music = music.Music("assets/bg.mp3")
         self.all_sprites = pygame.sprite.Group((self.hero,) + tuple(self.enemies))
         self.state = "GAME"
+      #music
+      
+
 
     '''
     this function initializes pygame, sets up screen, sets bg color, and creates sprite group for enemt
@@ -35,34 +40,12 @@ class Controller:
     return None
     '''
 
-
-
-  
-    def background_music(self):
-      self.source = audio.play_file('assets/bg.mp3')
-      while True:
-        self.source
-      
-
-
-    '''
-      self.source = audio.play_file('assets/bg.mp3')
-
-      while True:
-        if (self.state == "GAME"):
-          self.source
-
-    '''
-
-
-
-
-
   
     def mainLoop(self):
         while True:
             if(self.state == "GAME"):
                 self.gameLoop()
+                
             elif(self.state == "GAMEOVER"):
                 self.gameOver()
 
@@ -74,6 +57,11 @@ class Controller:
         
 
     def gameLoop(self):
+        source = audio.play_file('assets/bg.mp3')
+
+        while True:
+          pass 
+          
         while self.state == "GAME":
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -108,6 +96,9 @@ class Controller:
 
             # update the screen
             pygame.display.flip()
+
+
+      
 
 
     '''
